@@ -22,11 +22,19 @@
 图来自：[An End-to-End Formula Recognition Method Integrated Attention Mechanism Figure 7.](https://www.mdpi.com/2227-7390/11/1/177)
 
 ### 运行环境
-- Node.js
+- [Node.js](https://nodejs.org/en/download)
 - Python
 
-### 文档
-完整文档请移步：.
+### 使用
+下载源码：
+```bash
+git clone https://github.com/SWHL/PreProcessLaTeXFormulaTools.git
+cd PreProcessLaTeXFormulaTools
+```
+运行：
+```bash
+python preprocess_formula/normalize_formulas.py --mode normalize --input_path tests/test_files/formulas.lst --out_path formulas.norm.lst
+```
 
 ### 致谢
 该仓库代码大部分来自[harvardnlp/im2markup](https://github.com/harvardnlp/im2markup)，十分感谢。
@@ -34,7 +42,7 @@
 ### 贡献者
 <p align="left">
   <a href="https://github.com/SWHL/PreProcessLaTeXFormulaTools/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=SWHL/PreProcessLaTeXFormulaTools" width="10%"/>
+    <img src="https://contrib.rocks/image?repo=SWHL/PreProcessLaTeXFormulaTools" width="8%"/>
   </a>
 </p>
 

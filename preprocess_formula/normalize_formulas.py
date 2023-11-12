@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    processor = NormalizeLaTeXFormula()
+    processor = NormalizeFormula()
 
     processor(mode=args.mode, input_path=args.input_path, out_path=args.out_path)
 

@@ -8,48 +8,58 @@
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
   <a href="https://github.com/SWHL/PreProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/license-MIT-blue"></a>
 
-
   [简体中文](./docs/README_zh.md) | English
 </div>
 
-### 简介
-该仓库是处理LaTeX格式公式的工具库。包括对现有LaTeX公式进行校验是否语法有误，以及对现有LaTeX公式进行normalize化，便于后续用于训练等任务。
+### Introduction
+This repository is a library of tools for processing LaTeX formulas. This includes checking existing LaTeX formulas for syntax errors and normalizing existing LaTeX formulas for subsequent use in tasks such as training.
 
 
-### 公式规范化说明
+### What are normalized LaTeX formulas?
 <div align="center">
     <img src="https://github.com/SWHL/PreProcessLaTeXFormulaTools/releases/download/v0.0.0/normalize_demo.jpg" width="70%" height="70%">
 </div>
 
-图来自：[An End-to-End Formula Recognition Method Integrated Attention Mechanism Figure 7.](https://www.mdpi.com/2227-7390/11/1/177)
+From：[An End-to-End Formula Recognition Method Integrated Attention Mechanism Figure 7.](https://www.mdpi.com/2227-7390/11/1/177)
 
 
-### 运行环境
-- Node.js
+### Environment
+- [Node.js](https://nodejs.org/en/download)
 - Python
 
+### Usage
+Download source code:
+```bash
+git clone https://github.com/SWHL/PreProcessLaTeXFormulaTools.git
+cd PreProcessLaTeXFormulaTools
+```
+Run:
+```bash
+python preprocess_formula/normalize_formulas.py --mode normalize --input_path tests/test_files/formulas.lst --out_path formulas.norm.lst
+```
 
-### 文档
-完整文档请移步：.
+### Acknowledgements
+Most of the code in this warehouse comes from [harvardnlp/im2markup](https://github.com/harvardnlp/im2markup). Thank you very much.
 
-### 致谢
-该仓库代码大部分来自[harvardnlp/im2markup](https://github.com/harvardnlp/im2markup)，十分感谢。
-
-### 贡献者
+### Contributing
 <p align="left">
   <a href="https://github.com/SWHL/PreProcessLaTeXFormulaTools/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=SWHL/PreProcessLaTeXFormulaTools" width="8%"/>
   </a>
 </p>
 
-### 贡献指南
-我们感谢所有的贡献者为改进和提升 PreProcessLaTeXFormulaTools 所作出的努力。
-- 欢迎提交请求。对于重大更改，请先打开issue讨论您想要改变的内容。
-- 请确保适当更新测试。
+### Contributing
+- Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+- Please make sure to update tests as appropriate.
 
-### [赞助](https://rapidai.github.io/Knowledge-QA-LLM/docs/sponsor/)
-如果您想要赞助该项目，可直接点击当前页最上面的Sponsor按钮，请写好备注(**您的Github账号名称**)，方便添加到赞助列表中。
+### [Sponsor](https://rapidai.github.io/Knowledge-QA-LLM/docs/sponsor/)
+If you want to sponsor the project, you can directly click the **Buy me a coffee** image, please write a note (e.g. your github account name) to facilitate adding to the sponsorship list below.
+
+<div align="left">
+   <a href="https://www.buymeacoffee.com/SWHL"><img src="https://raw.githubusercontent.com/RapidAI/.github/main/assets/buymeacoffe.png" width="30%" height="30%"></a>
+</div>
 
 
-### 开源许可证
-该项目采用[MIT](https://choosealicense.com/licenses/mit/)开源许可证。
+### License
+This project is released under the [Apache 2.0 license](https://github.com/SWHL/PreProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE).
