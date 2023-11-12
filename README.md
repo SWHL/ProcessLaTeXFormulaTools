@@ -6,7 +6,7 @@
   <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Mac-pink.svg"></a>
   <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-  <a href="https://choosealicense.com/licenses/mit/"><img alt="GitHub" src="https://img.shields.io/github/license/SWHL/PreProcessLaTeXFormulaTools"></a>
+  <a href="https://github.com/SWHL/PreProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE"><img alt="GitHub" src="https://img.shields.io/github/license/SWHL/PreProcessLaTeXFormulaTools"></a>
 
 </div>
 
