@@ -1,13 +1,12 @@
 <div align="center">
   <div align="center">
-    <h1><b>🛠️ Pre Process LaTeX Tools</b></h1>
+    <h1><b>🛠️ Preprocessing LaTeX formula Tool</b></h1>
   </div>
   <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
   <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Mac-pink.svg"></a>
   <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-  <a href="https://choosealicense.com/licenses/mit/"><img alt="GitHub" src="https://img.shields.io/github/license/SWHL/PreProcessLaTeXFormularTools
-"></a>
+  <a href="https://choosealicense.com/licenses/mit/"><img alt="GitHub" src="https://img.shields.io/github/license/SWHL/PreProcessLaTeXFormulaTools"></a>
 
 </div>
 
@@ -28,13 +27,13 @@
 
 ### 贡献者
 <p align="left">
-  <a href="https://github.com/SWHL/PreProcessLaTeXFormularTools/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=SWHL/PreProcessLaTeXFormularTools" width="10%"/>
+  <a href="https://github.com/SWHL/PreProcessLaTeXFormulaTools/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=SWHL/PreProcessLaTeXFormulaTools" width="10%"/>
   </a>
 </p>
 
 ### 贡献指南
-我们感谢所有的贡献者为改进和提升 PreProcessLaTeXFormularTools 所作出的努力。
+我们感谢所有的贡献者为改进和提升 PreProcessLaTeXFormulaTools 所作出的努力。
 - 欢迎提交请求。对于重大更改，请先打开issue讨论您想要改变的内容。
 - 请确保适当更新测试。
 

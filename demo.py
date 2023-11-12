@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 # @Author: SWHL
 # @Contact: liekkaskono@163.com
-from preprocess_formular import NormalizeFormular
+from preprocess_formula import NormalizeFormula
 
-normlizer = NormalizeFormular()
+normlizer = NormalizeFormula()
 
 mode = "normalize"
 input_path = "tests/test_files/formulas.lst"

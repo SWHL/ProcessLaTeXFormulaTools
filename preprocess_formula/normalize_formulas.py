@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import List, Union
 
 
-class NormalizeFormular:
+class NormalizeFormula:
     def __init__(
         self,
     ):
@@ -23,7 +23,7 @@ class NormalizeFormular:
         ]
 
         # 借助KaTeX获得规范化后的公式
-        normalized_formulas = self.get_normalize_formulars(after_content, mode)
+        normalized_formulas = self.get_normalize_formulas(after_content, mode)
 
         # 去除非ascii得字符
         final_content = self.remove_invalid_symbols(normalized_formulas)
@@ -53,12 +53,12 @@ class NormalizeFormular:
             for value in content:
                 f.write(f"{value}\n")
 
-    def get_normalize_formulars(self, after_content, mode) -> List[str]:
+    def get_normalize_formulas(self, after_content, mode) -> List[str]:
         temp_file = self.root_dir / "tmp"
         self.write_txt(temp_file, after_content)
 
         out_path = Path(temp_file).with_suffix(".temp.out")
-        cmd = "cat %s | node preprocess_formular/preprocess_latex.js %s > %s " % (
+        cmd = "cat %s | node preprocess_formula/preprocess_latex.js %s > %s " % (
             temp_file,
             mode,
             out_path,
@@ -131,7 +131,7 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    processor = NormalizeLaTeXFormular()
+    processor = NormalizeLaTeXFormula()
 
     processor(mode=args.mode, input_path=args.input_path, out_path=args.out_path)
 

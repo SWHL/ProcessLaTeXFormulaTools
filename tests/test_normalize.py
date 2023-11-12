@@ -8,11 +8,11 @@ cur_dir = Path(__file__).resolve().parent
 root_dir = cur_dir.parent
 sys.path.append(str(root_dir))
 
-from preprocess_formular import NormalizeFormular
+from preprocess_formula import NormalizeFormula
 
 test_file_dir = cur_dir / "test_files"
 mode = "normalize"
-normlizer = NormalizeFormular()
+normlizer = NormalizeFormula()
 
 
 def test_input_normal():
