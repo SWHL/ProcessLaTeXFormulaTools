@@ -29,7 +29,7 @@
 下载源码：
 ```bash
 git clone https://github.com/SWHL/ProcessLaTeXFormulaTools.git
-cd PreProcessLaTeXFormulaTools
+cd ProcessLaTeXFormulaTools
 ```
 运行：
 ```bash
@@ -47,7 +47,7 @@ python process_formula/normalize_formulas.py --mode normalize --input_path tests
 </p>
 
 ### 贡献指南
-我们感谢所有的贡献者为改进和提升 PreProcessLaTeXFormulaTools 所作出的努力。
+我们感谢所有的贡献者为改进和提升 ProcessLaTeXFormulaTools 所作出的努力。
 - 欢迎提交请求。对于重大更改，请先打开issue讨论您想要改变的内容。
 - 请确保适当更新测试。
 

@@ -31,7 +31,7 @@ From：[An End-to-End Formula Recognition Method Integrated Attention Mechanism 
 Download source code:
 ```bash
 git clone https://github.com/SWHL/ProcessLaTeXFormulaTools.git
-cd PreProcessLaTeXFormulaTools
+cd ProcessLaTeXFormulaTools
 ```
 Run:
 ```bash
