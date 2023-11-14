@@ -19,8 +19,30 @@ def test_input_normal():
     input_path = test_file_dir / "formulas.lst"
     out_path = test_file_dir / "formulas.norm.lst"
 
-    normlizer(mode=mode, input_path=input_path, out_path=out_path)
+    normlizer(mode=mode, input_content=input_path, out_path=out_path)
 
     content = normlizer.read_txt(out_path)
     assert len(content) == 1200
     assert len(content[1149]) == 0
+
+
+def test_input_str():
+    math_str = r"\,^{*}d\,^{*}H=\kappa \,^{*}d\phi = J_B  . \label{bfm19}"
+    result = normlizer(math_str)
+
+    assert len(result) == 1
+    assert (
+        result[0]
+        == r"\, ^ { * } d \, ^ { * } H = \kappa \, ^ { * } d \phi = J _ { B } ."
+    )
+
+
+def test_input_list():
+    math_str = [r"\,^{*}d\,^{*}H=\kappa \,^{*}d\phi = J_B  . \label{bfm19}"]
+    result = normlizer(math_str)
+
+    assert len(result) == 1
+    assert (
+        result[0]
+        == r"\, ^ { * } d \, ^ { * } H = \kappa \, ^ { * } d \phi = J _ { B } ."
+    )

@@ -1,4 +1,6 @@
 # -*- encoding: utf-8 -*-
+# @Author: SWHL
+# @Contact: liekkaskono@163.com
 import argparse
 import re
 import subprocess
@@ -13,13 +15,17 @@ class NormalizeFormula:
         self.root_dir = Path(__file__).resolve().parent
 
     def __call__(
-        self, mode: str, input_path: Union[str, Path], out_path: Union[str, Path]
-    ):
+        self,
+        input_content: Union[str, Path, List[str]],
+        out_path: Union[str, Path, None] = None,
+        mode: str = "normalize",
+    ) -> List[str]:
+        input_data: List[str] = self.load_data(input_content)
+
         # 将hskip 替换为hspace{}
-        input_content = self.read_txt(input_path)
         after_content = [
             self.replace_hskip_to_hspace(v).replace("\r", " ").strip()
-            for v in input_content
+            for v in input_data
         ]
 
         if not self.check_node():
@@ -31,7 +37,20 @@ class NormalizeFormula:
         # 去除非ascii得字符
         final_content = self.remove_invalid_symbols(normalized_formulas)
 
-        self.write_txt(out_path, final_content)
+        if out_path is not None:
+            self.write_txt(out_path, final_content)
+        return final_content
+
+    def load_data(self, input_content: Union[str, Path, List[str]]) -> List[str]:
+        if isinstance(input_content, list):
+            return input_content
+
+        if isinstance(input_content, (str, Path)):
+            if Path(input_content).is_file():
+                return self.read_txt(input_content)
+            return [input_content]
+
+        raise NormalizeFormulaError("The format of input content is not supported!")
 
     def check_node(
         self,
@@ -112,7 +131,6 @@ class NormalizeFormula:
         except subprocess.CalledProcessError as e:
             print(f"Run {cmd} meets error. \n{e.stderr}")
             return False
-
         return True
 
     @staticmethod
