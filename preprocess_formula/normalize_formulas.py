@@ -22,6 +22,9 @@ class NormalizeFormula:
             for v in input_content
         ]
 
+        if not self.check_node():
+            raise NormalizeFormulaError("Node.js was not installed correctly!")
+
         # 借助KaTeX获得规范化后的公式
         normalized_formulas = self.get_normalize_formulas(after_content, mode)
 
@@ -29,6 +32,13 @@ class NormalizeFormula:
         final_content = self.remove_invalid_symbols(normalized_formulas)
 
         self.write_txt(out_path, final_content)
+
+    def check_node(
+        self,
+    ) -> bool:
+        if self.run_cmd("node -v"):
+            return True
+        return False
 
     def replace_hskip_to_hspace(self, input_string: str) -> str:
         pattern = r"hskip(.*?)(cm|in|pt|mm|em)"
@@ -89,16 +99,31 @@ class NormalizeFormula:
             return False
 
     @staticmethod
-    def run_cmd(cmd: str):
-        ret = subprocess.call(cmd, shell=True)
-        if ret != 0:
-            print(f"FAILED: {cmd}")
+    def run_cmd(cmd: str) -> bool:
+        try:
+            ret = subprocess.run(
+                cmd,
+                shell=True,
+                check=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+            )
+        except subprocess.CalledProcessError as e:
+            print(f"Run {cmd} meets error. \n{e.stderr}")
+            return False
+
+        return True
 
     @staticmethod
     def del_file(file_path: Union[str, Path]):
         file_path = Path(file_path)
         if file_path.exists() and file_path.is_file():
             file_path.unlink()
+
+
+class NormalizeFormulaError(Exception):
+    pass
 
 
 if __name__ == "__main__":
