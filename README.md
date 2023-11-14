@@ -1,12 +1,12 @@
 <div align="center">
   <div align="center">
-    <h1><b>🛠️ Preprocessing LaTeX formula Tool</b></h1>
+    <h1><b>🛠️ Process LaTeX formula Tools</b></h1>
   </div>
   <a href=""><img src="https://img.shields.io/badge/Python->=3.6,<3.12-aff.svg"></a>
   <a href=""><img src="https://img.shields.io/badge/OS-Linux%2C%20Mac-pink.svg"></a>
   <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-  <a href="https://github.com/SWHL/PreProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/license-MIT-blue"></a>
+  <a href="https://github.com/SWHL/ProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/license-MIT-blue"></a>
 
   [简体中文](./docs/README_zh.md) | English
 </div>
@@ -17,7 +17,7 @@ This repository is a library of tools for processing LaTeX formulas. This includ
 
 ### What are normalized LaTeX formulas?
 <div align="center">
-    <img src="https://github.com/SWHL/PreProcessLaTeXFormulaTools/releases/download/v0.0.0/normalize_demo.jpg" width="70%" height="70%">
+    <img src="https://github.com/SWHL/ProcessLaTeXFormulaTools/releases/download/v0.0.0/normalize_demo.jpg" width="70%" height="70%">
 </div>
 
 From：[An End-to-End Formula Recognition Method Integrated Attention Mechanism Figure 7.](https://www.mdpi.com/2227-7390/11/1/177)
@@ -30,7 +30,7 @@ From：[An End-to-End Formula Recognition Method Integrated Attention Mechanism 
 ### Usage
 Download source code:
 ```bash
-git clone https://github.com/SWHL/PreProcessLaTeXFormulaTools.git
+git clone https://github.com/SWHL/ProcessLaTeXFormulaTools.git
 cd PreProcessLaTeXFormulaTools
 ```
 Run:
@@ -43,8 +43,8 @@ Most of the code in this warehouse comes from [harvardnlp/im2markup](https://git
 
 ### Contributing
 <p align="left">
-  <a href="https://github.com/SWHL/PreProcessLaTeXFormulaTools/graphs/contributors">
-    <img src="https://contrib.rocks/image?repo=SWHL/PreProcessLaTeXFormulaTools" width="8%"/>
+  <a href="https://github.com/SWHL/ProcessLaTeXFormulaTools/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=SWHL/ProcessLaTeXFormulaTools" width="8%"/>
   </a>
 </p>
 
@@ -62,4 +62,4 @@ If you want to sponsor the project, you can directly click the **Buy me a coffee
 
 
 ### License
-This project is released under the [Apache 2.0 license](https://github.com/SWHL/PreProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE).
+This project is released under the [Apache 2.0 license](https://github.com/SWHL/ProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE).

@@ -8,7 +8,7 @@ cur_dir = Path(__file__).resolve().parent
 root_dir = cur_dir.parent
 sys.path.append(str(root_dir))
 
-from preprocess_formula import NormalizeFormula
+from process_formula import NormalizeFormula
 
 test_file_dir = cur_dir / "test_files"
 mode = "normalize"
