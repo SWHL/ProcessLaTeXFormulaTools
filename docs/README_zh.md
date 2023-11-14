@@ -25,15 +25,14 @@
 - [Node.js](https://nodejs.org/en/download)
 - Python
 
-### 使用
-下载源码：
+### 安装
 ```bash
-git clone https://github.com/SWHL/ProcessLaTeXFormulaTools.git
-cd ProcessLaTeXFormulaTools
+pip install process_formula
 ```
-运行：
+
+### 使用
 ```bash
-python process_formula/normalize_formulas.py --mode normalize --input_path tests/test_files/formulas.lst --out_path formulas.norm.lst
+$ normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst
 ```
 
 ### 致谢

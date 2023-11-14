@@ -87,8 +87,10 @@ class NormalizeFormula:
         self.write_txt(temp_file, after_content)
 
         out_path = Path(temp_file).with_suffix(".temp.out")
-        cmd = "cat %s | node process_formula/preprocess_latex.js %s > %s " % (
+        latex_js_path = self.root_dir / "preprocess_latex.js"
+        cmd = "cat %s | node %s %s > %s " % (
             temp_file,
+            latex_js_path,
             mode,
             out_path,
         )
@@ -144,38 +146,43 @@ class NormalizeFormulaError(Exception):
     pass
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(
         description="Preprocess (tokenize or normalize) latex formulas"
     )
     parser.add_argument(
-        "--mode",
-        dest="mode",
-        choices=["tokenize", "normalize"],
-        required=True,
-        help=(
-            "Tokenize (split to tokens seperated by space) or normalize (further translate to an equivalent standard form)."
-        ),
-    )
-    parser.add_argument(
-        "--input_path",
-        dest="input_path",
+        "--input_content",
+        dest="input_content",
         type=str,
         required=True,
-        help=("Input file containing latex formulas. One formula per line."),
+        help="Str / List / file path which contains multi-lines formulas.",
     )
     parser.add_argument(
         "--out_path",
         dest="out_path",
         type=str,
-        required=True,
-        help=("Output file."),
+        default=None,
+        help="Output file. Default is None",
     )
-
+    parser.add_argument(
+        "--mode",
+        dest="mode",
+        choices=["tokenize", "normalize"],
+        default="normalize",
+        help=(
+            "Tokenize (split to tokens seperated by space) or normalize (further translate to an equivalent standard form)."
+        ),
+    )
     args = parser.parse_args()
 
     processor = NormalizeFormula()
+    result = processor(
+        input_content=args.input_content,
+        out_path=args.out_path,
+        mode=args.mode,
+    )
+    print(result)
 
-    processor(mode=args.mode, input_path=args.input_path, out_path=args.out_path)
 
-    print("Jobs finished")
+if __name__ == "__main__":
+    main()

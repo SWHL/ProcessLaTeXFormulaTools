@@ -55,7 +55,7 @@ setuptools.setup(
     license="Apache-2.0",
     include_package_data=True,
     install_requires=read_txt("requirements.txt"),
-    packages=[MODULE_NAME],
+    packages=[MODULE_NAME, f"{MODULE_NAME}.third_party"],
     package_data={"": ["*.js", "*.json", "*.txt", "*.md"]},
     keywords=["formula,KaTeX,LaTeX,im2markup"],
     classifiers=[
@@ -69,7 +69,7 @@ setuptools.setup(
     python_requires=">=3.6,<3.12",
     entry_points={
         "console_scripts": [
-            f"coco_to_labelImg={MODULE_NAME}.coco_to_labelImg:main",
+            f"normalize_formula={MODULE_NAME}.normalize_formulas:main",
         ],
     },
 )
