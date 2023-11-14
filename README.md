@@ -35,7 +35,7 @@ cd PreProcessLaTeXFormulaTools
 ```
 Run:
 ```bash
-python preprocess_formula/normalize_formulas.py --mode normalize --input_path tests/test_files/formulas.lst --out_path formulas.norm.lst
+python process_formula/normalize_formulas.py --mode normalize --input_path tests/test_files/formulas.lst --out_path formulas.norm.lst
 ```
 
 ### Acknowledgements

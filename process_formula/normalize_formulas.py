@@ -87,7 +87,7 @@ class NormalizeFormula:
         self.write_txt(temp_file, after_content)
 
         out_path = Path(temp_file).with_suffix(".temp.out")
-        cmd = "cat %s | node preprocess_formula/preprocess_latex.js %s > %s " % (
+        cmd = "cat %s | node process_formula/preprocess_latex.js %s > %s " % (
             temp_file,
             mode,
             out_path,
