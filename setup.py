@@ -7,6 +7,7 @@ from typing import List, Union
 
 import setuptools
 from get_pypi_latest_version import GetPyPiLatestVersion
+from setuptools import find_namespace_packages
 
 
 def read_txt(txt_path: Union[Path, str]) -> List[str]:
@@ -55,7 +56,8 @@ setuptools.setup(
     license="Apache-2.0",
     include_package_data=True,
     install_requires=read_txt("requirements.txt"),
-    packages=[MODULE_NAME, f"{MODULE_NAME}.third_party"],
+    package_dir={"": MODULE_NAME},
+    packages=find_namespace_packages(where=MODULE_NAME),
     package_data={"": ["*.js", "*.json", "*.txt", "*.md"]},
     keywords=["formula,KaTeX,LaTeX,im2markup"],
     classifiers=[

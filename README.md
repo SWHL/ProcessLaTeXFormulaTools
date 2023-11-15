@@ -27,16 +27,42 @@ From：[An End-to-End Formula Recognition Method Integrated Attention Mechanism 
 - [Node.js](https://nodejs.org/en/download)
 - Python
 
+### Installation
+```bash
+pip install process_formula
+```
+
 ### Usage
-Download source code:
-```bash
-git clone https://github.com/SWHL/ProcessLaTeXFormulaTools.git
-cd ProcessLaTeXFormulaTools
+Script usage:
+```python
+from process_formula import NormalizeFormula
+
+normlizer = NormalizeFormula()
+
+math_str = [
+     r"\,^{*}d\,^{*}H=\kappa \,^{*}d\phi = J_B . \label{bfm19}",
+     r"\label{A0}A_0 = \pm\sqrt{{4\over 3(1-\alpha)}}e^{(\alpha-1)\phi}\ .",
+]
+
+result = normlizer(math_str)
+print(result)
+
+# Output example:
+[
+     '\\, ^ { * } d \\, ^ { * } H = \\kappa \\, ^ { * } d \\phi = J _ { B } .',
+     'A _ { 0 } = \\pm \\sqrt { { \\frac { 4 } { 3 ( 1 - \\alpha ) } } } e ^ { ( \\alpha - 1 ) \\phi } \\ . '
+]
 ```
-Run:
+
+Command line usage:
 ```bash
-python process_formula/normalize_formulas.py --mode normalize --input_path tests/test_files/formulas.lst --out_path formulas.norm.lst
+$ normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst
 ```
+
+### Input and output description
+Input: `Union[str, List[str], txt_path]` supports input strings, lists and text files where each line is a formula
+
+Output: `List[str]` returns a list containing the formula string parsed line by line. If the `out_path` parameter is specified, the results will be saved in the specified directory.
 
 ### Acknowledgements
 Most of the code in this warehouse comes from [harvardnlp/im2markup](https://github.com/harvardnlp/im2markup). Thank you very much.
