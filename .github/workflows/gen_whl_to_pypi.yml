@@ -28,11 +28,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
- 
+
       - name: Display Python version
         run: python -c "import sys; print(sys.version)"
 
-      - name: Unit testings with label_convert
+      - name: Unit testings
         run: |
           pip install -r requirements.txt
           pip install pytest
@@ -56,6 +56,14 @@ jobs:
           pip install -r requirements.txt
           python -m pip install --upgrade pip
           pip install wheel get_pypi_latest_version
+
+          mkdir process_formula_t
+          mv process_formula process_formula_t
+          mv process_formula_t process_formula
+          cd process_formula
+          echo "from .process_formula import NormalizeFormula" > __init__.py
+
+          cd ..
           python setup.py bdist_wheel ${{ github.event.head_commit.message }}
 
       - name: Publish distribution 📦 to Test PyPI
