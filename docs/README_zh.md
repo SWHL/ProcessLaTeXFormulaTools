@@ -7,7 +7,7 @@
   <a href="https://semver.org/"><img alt="SemVer2.0" src="https://img.shields.io/badge/SemVer-2.0-brightgreen"></a>
   <a href="https://github.com/psf/black"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
   <a href="https://github.com/SWHL/ProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE"><img alt="GitHub" src="https://img.shields.io/badge/license-MIT-blue"></a>
-  <a href="https://pepy.tech/project/process_formula"><img src="https://static.pepy.tech/personalized-badge/process_formula?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads%20Paddle"></a>
+  <a href="https://pepy.tech/project/process_formula"><img src="https://static.pepy.tech/personalized-badge/process_formula?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads"></a>
   <a href="https://pypi.org/project/process-formula/"><img alt="PyPI" src="https://img.shields.io/pypi/v/process-formula"></a>
 
   简体中文 | [English](https://github.com/SWHL/ProcessLaTeXFormulaTools)
