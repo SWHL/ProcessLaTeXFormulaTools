@@ -33,37 +33,12 @@ pip install process_formula
 ```
 
 ### 使用
-脚本使用：
-```python
-from process_formula import NormalizeFormula
-
-normlizer = NormalizeFormula()
-
-math_str = [
-    r"\,^{*}d\,^{*}H=\kappa \,^{*}d\phi = J_B  . \label{bfm19}",
-    r"\label{A0}A_0 = \pm\sqrt{{4\over 3(1-\alpha)}}e^{(\alpha-1)\phi}\ .",
-]
-
-result = normlizer(math_str)
-print(result)
-
-# 输出示例：
-[
-    '\\, ^ { * } d \\, ^ { * } H = \\kappa \\, ^ { * } d \\phi = J _ { B } .',
-    'A _ { 0 } = \\pm \\sqrt { { \\frac { 4 } { 3 ( 1 - \\alpha ) } } } e ^ { ( \\alpha - 1 ) \\phi } \\ .'
-]
-```
-
-命令行使用：
 ```bash
 $ normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst
 ```
 
-### 输入输出说明
-输入：`Union[str, List[str], txt_path]` 支持输入字符串，列表和每行都是公式的文本文件
-
-输出：`List[str]` 返回一个列表，里面是逐行解析后的公式字符串。如果指定`out_path`参数，会将结果保存到指定目录下。
-
+### 文档
+完整文档请移步：[docs](https://swhl.github.io/ProcessLaTeXFormulaTools/docs)
 
 ### 致谢
 该仓库代码大部分来自[harvardnlp/im2markup](https://github.com/harvardnlp/im2markup)，十分感谢。
