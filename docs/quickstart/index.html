@@ -38,7 +38,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://swhl.github.io/ProcessLaTeXFormulaTools/docs/quickstart/" /><meta property="og:image" content="https://swhl.github.io/ProcessLaTeXFormulaTools/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_6982634243934929632.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-11-17T09:25:32+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2023-11-17T09:39:36+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://swhl.github.io/ProcessLaTeXFormulaTools/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_6982634243934929632.png"/>
 <meta name="twitter:title" content="快速开始"/>
 <meta name="twitter:description" content="故事的开始，只需3步。"/>
@@ -335,6 +335,7 @@
           <ul>
             <li><a href="#1-安装">1. 安装</a></li>
             <li><a href="#2-使用">2. 使用</a></li>
+            <li><a href="#3-输入输出说明">3. 输入输出说明</a></li>
           </ul>
         </li>
       </ul>
@@ -356,6 +357,7 @@
           <ul>
             <li><a href="#1-安装">1. 安装</a></li>
             <li><a href="#2-使用">2. 使用</a></li>
+            <li><a href="#3-输入输出说明">3. 输入输出说明</a></li>
           </ul>
         </li>
       </ul>
@@ -411,14 +413,14 @@
 		
 
 		<a class="nav-link  active"
-		   id="bcafedTab" data-bs-toggle="tab" data-bs-target="#bcafed"
-		   type="button" role="tab" aria-controls="bcafed" aria-selected="true">终端使用</a>
+		   id="fbadceTab" data-bs-toggle="tab" data-bs-target="#fbadce"
+		   type="button" role="tab" aria-controls="fbadce" aria-selected="true">终端使用</a>
 
 		
 
 		<a class="nav-link "
-		   id="dfbaceTab" data-bs-toggle="tab" data-bs-target="#dfbace"
-		   type="button" role="tab" aria-controls="dfbace" aria-selected="true">Python使用</a>
+		   id="cdabfeTab" data-bs-toggle="tab" data-bs-target="#cdabfe"
+		   type="button" role="tab" aria-controls="cdabfe" aria-selected="true">Python使用</a>
 
 		
 
@@ -434,7 +436,7 @@
 
 
 
-<div class="tab-pane fade show active" id="bcafed" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show active" id="fbadce" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -467,7 +469,7 @@
 
 
 
-<div class="tab-pane fade" id="dfbace" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade" id="cdabfe" role="tabpanel" aria-labelledby="nav-1">
 
 	
 
@@ -513,6 +515,8 @@ print(result)
 
 
 </div>
+<h3 id="3-输入输出说明">3. 输入输出说明 <a href="#3-%e8%be%93%e5%85%a5%e8%be%93%e5%87%ba%e8%af%b4%e6%98%8e" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h3><p>输入：<code>Union[str, List[str], txt_path]</code> 支持输入字符串，列表和每行都是公式的文本文件</p>
+<p>输出：<code>List[str]</code> 返回一个列表，里面是逐行解析后的公式字符串。如果指定<code>out_path</code>参数，会将结果保存到指定目录下。</p>
 
     </div>
 
@@ -550,9 +554,9 @@ print(result)
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-11-17T09:25:32&#43;0800"
-            title="17 Nov 2023, 09:25 &#43;0800">
-            17 Nov 2023, 09:25 &#43;0800
+            data-authdate="2023-11-17T09:39:36&#43;0800"
+            title="17 Nov 2023, 09:39 &#43;0800">
+            17 Nov 2023, 09:39 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -827,7 +831,7 @@ print(result)
                 href: "\/ProcessLaTeXFormulaTools\/docs\/quickstart\/",
                 title: "快速开始",
                 description: "故事的开始，只需3步。",
-                content: "1. 安装 link pip install process_formula 2. 使用 link 终端使用 Python使用 normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst from process_formula import NormalizeFormula normlizer = NormalizeFormula() math_str = [ r\"\\,^{*}d\\,^{*}H=\\kappa \\,^{*}d\\phi = J_B . \\label{bfm19}\", r\"\\label{A0}A_0 = \\pm\\sqrt{{4\\over 3(1-\\alpha)}}e^{(\\alpha-1)\\phi}\\ .\", ] result = normlizer(math_str) print(result) # 输出示例： [ '\\\\, ^ { * } d \\\\, ^ { * } H = \\\\kappa \\\\, ^ { * } d \\\\phi = J _ { B } .', 'A _ { 0 } = \\\\pm \\\\sqrt { { \\\\frac { 4 } { 3 ( 1 - \\\\alpha ) } } } e ^ { ( \\\\alpha - 1 ) \\\\phi } \\\\ .' ] "
+                content: "1. 安装 link pip install process_formula 2. 使用 link 终端使用 Python使用 normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst from process_formula import NormalizeFormula normlizer = NormalizeFormula() math_str = [ r\"\\,^{*}d\\,^{*}H=\\kappa \\,^{*}d\\phi = J_B . \\label{bfm19}\", r\"\\label{A0}A_0 = \\pm\\sqrt{{4\\over 3(1-\\alpha)}}e^{(\\alpha-1)\\phi}\\ .\", ] result = normlizer(math_str) print(result) # 输出示例： [ '\\\\, ^ { * } d \\\\, ^ { * } H = \\\\kappa \\\\, ^ { * } d \\\\phi = J _ { B } .', 'A _ { 0 } = \\\\pm \\\\sqrt { { \\\\frac { 4 } { 3 ( 1 - \\\\alpha ) } } } e ^ { ( \\\\alpha - 1 ) \\\\phi } \\\\ .' ] 3. 输入输出说明 link输入：Union[str, List[str], txt_path] 支持输入字符串，列表和每行都是公式的文本文件\n输出：List[str] 返回一个列表，里面是逐行解析后的公式字符串。如果指定out_path参数，会将结果保存到指定目录下。\n"
             }
         );
     index.add(
