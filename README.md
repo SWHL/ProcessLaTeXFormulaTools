@@ -45,7 +45,7 @@ Full documentation can be found on [docs](https://swhl.github.io/ProcessLaTeXFor
 ### Acknowledgements
 Most of the code in this warehouse comes from [harvardnlp/im2markup](https://github.com/harvardnlp/im2markup). Thank you very much.
 
-### Contributing
+### Code Contributors
 <p align="left">
   <a href="https://github.com/SWHL/ProcessLaTeXFormulaTools/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=SWHL/ProcessLaTeXFormulaTools" width="8%"/>
