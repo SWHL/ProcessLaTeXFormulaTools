@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 # @Author: SWHL
 # @Contact: liekkaskono@163.com
-from process_formula_t import NormalizeFormula
+from process_formula import NormalizeFormula
 
 normlizer = NormalizeFormula()
 
