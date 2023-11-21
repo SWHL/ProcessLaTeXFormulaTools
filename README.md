@@ -36,7 +36,7 @@ pip install process_formula
 
 ### Usage
 ```bash
-$ normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst
+$ normalize_formula --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst
 ```
 
 ### Documentation
