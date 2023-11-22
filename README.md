@@ -66,4 +66,4 @@ If you want to sponsor the project, you can directly click the **Buy me a coffee
 
 
 ### License
-This project is released under the [Apache 2.0 license](https://github.com/SWHL/ProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE).
+This project is released under the [MIT](https://github.com/SWHL/ProcessLaTeXFormulaTools/blob/fee132e672e22ea417e34050b9a3e9df825ab36c/LICENSE).
