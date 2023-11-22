@@ -53,7 +53,7 @@ setuptools.setup(
     author="SWHL",
     author_email="liekkaskono@163.com",
     url="https://github.com/SWHL/ProcessLaTeXFormulaTools",
-    license="Apache-2.0",
+    license="MIT",
     include_package_data=True,
     install_requires=read_txt("requirements.txt"),
     package_dir={"": MODULE_NAME},
