@@ -23,7 +23,7 @@
       <pubDate>Wed, 10 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://swhl.github.io/ProcessLaTeXFormulaTools/docs/quickstart/</guid>
-      <description>1. 安装 link pip install process_formula 2. 使用 link 终端使用 Python使用 normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst from process_formula import NormalizeFormula normlizer = NormalizeFormula() math_str = [ r&amp;#34;\,^{*}d\,^{*}H=\kappa \,^{*}d\phi = J_B . \label{bfm19}&amp;#34;, r&amp;#34;\label{A0}A_0 = \pm\sqrt{{4\over 3(1-\alpha)}}e^{(\alpha-1)\phi}\ .&amp;#34;, ] result = normlizer(math_str) print(result) # 输出示例： [ &amp;#39;\\, ^ { * } d \\, ^ { * } H = \\kappa \\, ^ { * } d \\phi = J _ { B } .</description>
+      <description>1. 安装 link pip install process_formula 2. 使用 link 终端使用 Python使用 process_formula --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst from process_formula import NormalizeFormula normlizer = NormalizeFormula() math_str = [ r&amp;#34;\,^{*}d\,^{*}H=\kappa \,^{*}d\phi = J_B . \label{bfm19}&amp;#34;, r&amp;#34;\label{A0}A_0 = \pm\sqrt{{4\over 3(1-\alpha)}}e^{(\alpha-1)\phi}\ .&amp;#34;, ] result = normlizer(math_str) print(result) # 输出示例： [ &amp;#39;\\, ^ { * } d \\, ^ { * } H = \\kappa \\, ^ { * } d \\phi = J _ { B } .</description>
     </item>
     
     <item>
