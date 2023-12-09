@@ -71,7 +71,7 @@ setuptools.setup(
     python_requires=">=3.6,<3.12",
     entry_points={
         "console_scripts": [
-            f"normalize_formula={MODULE_NAME}.normalize_formulas:main",
+            f"process_formula={MODULE_NAME}.normalize_formulas:main",
         ],
     },
 )
