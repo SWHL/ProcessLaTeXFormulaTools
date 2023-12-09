@@ -20,7 +20,7 @@ pip install process_formula
 {{% tab tabName="终端使用" %}}
 
 ```bash {linenos=table}
-normalize_formular --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst
+process_formula --input_content tests/test_files/formulas.lst --out_path formulas.norm.lst
 ```
 
 {{% /tab %}}
