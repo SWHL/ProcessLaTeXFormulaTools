@@ -46,6 +46,9 @@ class NormalizeFormula:
             return input_content
 
         if isinstance(input_content, (str, Path)):
+            if len(str(input_content)) > 255:
+                return [input_content]
+
             if Path(input_content).is_file():
                 return self.read_txt(input_content)
             return [input_content]
