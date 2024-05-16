@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 # @Author: SWHL
 # @Contact: liekkaskono@163.com
+import uuid
 import argparse
 import re
 import subprocess
@@ -86,7 +87,8 @@ class NormalizeFormula:
                 f.write(f"{value}\n")
 
     def get_normalize_formulas(self, after_content, mode) -> List[str]:
-        temp_file = self.root_dir / "tmp"
+        temp_id = uuid.uuid4()
+        temp_file = self.root_dir / f"tmp_{temp_id}"
         self.write_txt(temp_file, after_content)
 
         out_path = Path(temp_file).with_suffix(".temp.out")
