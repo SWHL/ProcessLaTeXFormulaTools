@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 # @Author: SWHL
 # @Contact: liekkaskono@163.com
-import uuid
 import argparse
 import re
 import subprocess
@@ -87,24 +86,21 @@ class NormalizeFormula:
                 f.write(f"{value}\n")
 
     def get_normalize_formulas(self, after_content, mode) -> List[str]:
-        temp_id = uuid.uuid4()
-        temp_file = self.root_dir / f"tmp_{temp_id}"
-        self.write_txt(temp_file, after_content)
-
-        out_path = Path(temp_file).with_suffix(".temp.out")
         latex_js_path = self.root_dir / "preprocess_latex.js"
-        cmd = "cat %s | node %s %s > %s " % (
-            temp_file,
-            latex_js_path,
-            mode,
-            out_path,
-        )
-        self.run_cmd(cmd)
-        self.del_file(temp_file)
+        cmd = ["node", latex_js_path, mode]
 
-        out_content = self.read_txt(out_path)
-        self.del_file(out_path)
-        return out_content
+        try:
+            result = subprocess.run(
+                cmd,
+                input="\n".join(after_content),
+                capture_output=True,
+                text=True,
+                check=True
+            )
+            return result.stdout.splitlines()
+        except subprocess.CalledProcessError as e:
+            print(f"Error occurred: {e.stderr}")
+            raise NormalizeFormulaError("Error occurred while normalizing formulas.")
 
     def remove_invalid_symbols(self, normalized_formulas: List[str]) -> List[str]:
         final_content = []
@@ -175,7 +171,7 @@ def main():
         choices=["tokenize", "normalize"],
         default="normalize",
         help=(
-            "Tokenize (split to tokens seperated by space) or normalize (further translate to an equivalent standard form)."
+            "Tokenize (split to tokens separated by space) or normalize (further translate to an equivalent standard form)."
         ),
     )
     args = parser.parse_args()
