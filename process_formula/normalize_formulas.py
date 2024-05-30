@@ -5,26 +5,24 @@ import argparse
 import re
 import subprocess
 from pathlib import Path
-from typing import List, Union
+from typing import List, Sequence, Union
 
 
 class NormalizeFormula:
-    def __init__(
-        self,
-    ):
+    def __init__(self):
         self.root_dir = Path(__file__).resolve().parent
 
     def __call__(
         self,
-        input_content: Union[str, Path, List[str]],
+        input_content: Union[str, Path, Sequence[Union[str, Path]]],
         out_path: Union[str, Path, None] = None,
         mode: str = "normalize",
     ) -> List[str]:
-        input_data: List[str] = self.load_data(input_content)
+        input_data = self.load_data(input_content)
 
         # 将hskip 替换为hspace{}
         after_content = [
-            self.replace_hskip_to_hspace(v).replace("\r", " ").strip()
+            self.replace_hskip_to_hspace(str(v)).replace("\r", " ").strip()
             for v in input_data
         ]
 
@@ -41,7 +39,9 @@ class NormalizeFormula:
             self.write_txt(out_path, final_content)
         return final_content
 
-    def load_data(self, input_content: Union[str, Path, List[str]]) -> List[str]:
+    def load_data(
+        self, input_content: Union[str, Path, Sequence[Union[str, Path]]]
+    ) -> Sequence[Union[str, Path]]:
         if isinstance(input_content, list):
             return input_content
 
@@ -55,9 +55,7 @@ class NormalizeFormula:
 
         raise NormalizeFormulaError("The format of input content is not supported!")
 
-    def check_node(
-        self,
-    ) -> bool:
+    def check_node(self) -> bool:
         if self.run_cmd("node -v"):
             return True
         return False
@@ -95,12 +93,14 @@ class NormalizeFormula:
                 input="\n".join(after_content),
                 capture_output=True,
                 text=True,
-                check=True
+                check=True,
             )
             return result.stdout.splitlines()
         except subprocess.CalledProcessError as e:
             print(f"Error occurred: {e.stderr}")
-            raise NormalizeFormulaError("Error occurred while normalizing formulas.")
+            raise NormalizeFormulaError(
+                "Error occurred while normalizing formulas."
+            ) from e
 
     def remove_invalid_symbols(self, normalized_formulas: List[str]) -> List[str]:
         final_content = []
@@ -135,12 +135,6 @@ class NormalizeFormula:
             print(f"Run {cmd} meets error. \n{e.stderr}")
             return False
         return True
-
-    @staticmethod
-    def del_file(file_path: Union[str, Path]):
-        file_path = Path(file_path)
-        if file_path.exists() and file_path.is_file():
-            file_path.unlink()
 
 
 class NormalizeFormulaError(Exception):
